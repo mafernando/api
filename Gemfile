@@ -112,3 +112,5 @@ gem 'has_scope'
 gem 'jellyfish-aws'
 gem 'jellyfish-notification'
 gem 'jellyfish-docker', git: 'git://github.com/projectjellyfish/jellyfish-docker.git'
+
+gem 'jellyfish-odl', git: 'git://github.com/projectjellyfish/jellyfish-odl.git'
