@@ -14,8 +14,6 @@
 #  index_motds_on_staff_id  (staff_id)
 #
 
-require 'rails_helper'
-
 describe Motd do
   it 'has a valid factory' do
     expect(build(:motd)).to be_valid

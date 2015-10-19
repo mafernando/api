@@ -15,5 +15,6 @@
 #
 
 class Motd < ActiveRecord::Base
-  validates :message, :staff_id, presence: true
+  validates :message, presence: true
+  validates :staff_id, presence: true
 end

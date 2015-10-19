@@ -61,7 +61,7 @@ end
 
 group :test do
   gem 'rake' # for travis
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '2.8.0', require: false
 end
 
 # Documentation
@@ -112,5 +112,4 @@ gem 'has_scope'
 gem 'jellyfish-aws'
 gem 'jellyfish-notification'
 gem 'jellyfish-docker', git: 'git://github.com/projectjellyfish/jellyfish-docker.git'
-
-gem 'jellyfish-odl', git: 'git://github.com/projectjellyfish/jellyfish-odl.git'
+gem 'jellyfish-azure', git: 'git://github.com/neudesic/jellyfish-azure.git'

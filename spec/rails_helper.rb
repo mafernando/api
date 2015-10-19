@@ -27,5 +27,6 @@ RSpec.configure do |config|
     Warden.test_mode!
   end
 
+  config.include Shoulda::Matchers
   # Capybara.javascript_driver = :poltergeist
 end

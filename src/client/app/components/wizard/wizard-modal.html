@@ -7,7 +7,9 @@
 </div>
 <div class="wizard-modal__body" ng-switch="vm.state">
   <div ng-switch-when="intro">
-    <button type="button" class="btn-rounded wizard-modal__button" ng-click="vm.startWizard()">Start Wizard</button>
+    <div class="wizard-modal__question">Welcome to the Wizard!</div>
+    <div class="wizard-modal__subtitle">Determine the best-suited products for your project<br>by answering the following set of questions.</div>
+    <button type="button" class="btn-rounded wizard-modal__button" ng-click="vm.startWizard()">Get Started</button>
   </div>
   <div ng-switch-when="wizard">
     <div class="wizard-modal__question">{{ vm.question.text }}</div>
@@ -23,20 +25,25 @@
     </div>
   </div>
   <div ng-switch-when="complete">
+    <div class="wizard-modal__question">Congratulations!</div>
+    <div class="wizard-modal__subtitle">The Wizard has come up with the best service options for you.</div>
     <button type="button" class="btn-rounded wizard-modal__button" ng-click="$close(vm.tags)">
       Show Matching Products
     </button>
   </div>
 </div>
-<div class="wizard-modal__footer">
+<div class="wizard-modal__footer" ng-switch="vm.state">
   <button type="button"
+          ng-switch-when="wizard"
           ng-disabled="vm.questionPointer <= 0 || vm.state !== 'wizard'"
           class="btn-rounded wizard-modal__ok"
           ng-click="vm.questionNavigation(-1)">Previous
   </button>
   <button type="button"
+          ng-switch-when="wizard"
           ng-disabled="vm.answeredQuestions.length <= vm.questionPointer || vm.state !== 'wizard'"
           class="btn-rounded wizard-modal__ok"
           ng-click="vm.questionNavigation(1)">Next
   </button>
 </div>
+

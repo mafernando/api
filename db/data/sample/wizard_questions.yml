@@ -46,12 +46,12 @@
       tags_to_add: [fisma-high]
       tags_to_remove: [fisma-low, fisma-medium, non-fisma]
 - _assoc: preferred
-  text: What is your preferred Cloud Provider
+  text: What is your preferred Cloud Provider?
   answers:
     - text: AWS
       tags_to_add: [aws]
       tags_to_remove: [vmware, azure]
-    - text: VMWare
+    - text: VMware
       tags_to_add: [vmware]
       tags_to_remove: [aws, azure]
     - text: Azure
