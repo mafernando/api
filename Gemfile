@@ -109,7 +109,9 @@ gem 'activesupport-json_encoder'
 gem 'has_scope'
 
 # Jellyfish Extensions
-gem 'jellyfish-aws'
 gem 'jellyfish-notification'
 gem 'jellyfish-docker', git: 'git://github.com/projectjellyfish/jellyfish-docker.git'
 gem 'jellyfish-azure', git: 'git://github.com/neudesic/jellyfish-azure.git'
+
+# gem 'jellyfish-aws', git: 'git://github.com/mafernando/jellyfish-aws.git', branch: 'develop'
+# gem 'jellyfish-odl', git: 'git://github.com/mafernando/jellyfish-odl.git', branch: 'develop'
