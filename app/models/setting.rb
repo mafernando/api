@@ -71,7 +71,7 @@ class Setting < ActiveRecord::Base
     self[:value] = v
   end
 
-  alias_method :value_before_type_cast, :value
+  alias value_before_type_cast value
 
   def default
     d = self[:default]
@@ -82,7 +82,7 @@ class Setting < ActiveRecord::Base
     self[:default] = v.to_yaml
   end
 
-  alias_method :default_before_type_cast, :default
+  alias default_before_type_cast default
 
   def parse_string_value(val)
     begin
@@ -113,7 +113,7 @@ class Setting < ActiveRecord::Base
   def self.create_existing(s, opts)
     bypass_readonly(s) do
       to_update = Hash[opts.select { |k, _| [:default, :value_type].include? k }]
-      to_update.merge!(value: SETTINGS[opts[:name].to_sym]) if SETTINGS.key?(opts[:name].to_sym)
+      to_update[:value] = SETTINGS[opts[:name].to_sym] if SETTINGS.key?(opts[:name].to_sym)
       s.update_attributes to_update
       s.update_column :type, opts[:type] if s.type != opts[:type]
     end

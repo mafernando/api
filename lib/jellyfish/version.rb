@@ -2,7 +2,7 @@ module Jellyfish
   # Simple struct for manipulation and comparing versions
   class Version
     attr_reader :version, :major, :minor, :patch, :tag, :short, :notag
-    alias_method :full, :version
+    alias full version
 
     def initialize(givenversion = nil)
       if givenversion

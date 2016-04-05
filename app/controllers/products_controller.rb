@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  PRODUCT_INCLUDES = %w(tags provider product_type answers orders)
+  PRODUCT_INCLUDES = %w(tags provider product_type answers orders).freeze
 
   before_action :pre_hook
 

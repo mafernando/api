@@ -73,7 +73,7 @@ class Theme < ActiveRecord::Base
       }
     },
     'required': %w(global link button navigation region tables tags modal)
-  }
+  }.freeze
 
   validates :name, presence: true
   validates :description, presence: true

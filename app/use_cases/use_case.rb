@@ -13,6 +13,6 @@ module UseCase
 
   # implement all the steps required to complete this use case
   def perform
-    fail NotImplementedError
+    raise NotImplementedError
   end
 end

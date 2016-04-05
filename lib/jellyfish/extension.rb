@@ -102,7 +102,7 @@ module Jellyfish
     def requires_jellyfish(matcher)
       current = SETTINGS[:version].notag
       unless Gem::Dependency.new('', matcher).match?('', current)
-        fail ExtensionRequirementError, '%{id} extension requires Jellyfish %{matcher} but current is %{current}'.format(id: id, matcher: matcher, current: current)
+        raise ExtensionRequirementError, '%{id} extension requires Jellyfish %{matcher} but current is %{current}'.format(id: id, matcher: matcher, current: current)
       end
       true
     end
@@ -112,9 +112,9 @@ module Jellyfish
     # matcher format is gem dependency format
     def requires_jellyfish_extension(extension_name, matcher)
       extension = Extension.find(extension_name)
-      fail ExtensionNotFound, '%{id} extension requires the %{extension_name} extension, not found'.format(id: id, extension_name: extension_name) unless extension
+      raise ExtensionNotFound, '%{id} extension requires the %{extension_name} extension, not found'.format(id: id, extension_name: extension_name) unless extension
       unless Gem::Dependency.new('', matcher).match?('', extension.version)
-        fail ExtensionRequirementError, '%{id} extension requires the %{extension_name} extension %{matcher} but current is %{extension_version}'.format(id: id, extension_name: extension_name, matcher: matcher, extension_version: extension.version)
+        raise ExtensionRequirementError, '%{id} extension requires the %{extension_name} extension %{matcher} but current is %{extension_version}'.format(id: id, extension_name: extension_name, matcher: matcher, extension_version: extension.version)
       end
       true
     end
@@ -135,7 +135,7 @@ module Jellyfish
 
     def pending_migrations
       migrations = ActiveRecord::Migrator.new(:up, ActiveRecord::Migrator.migrations_paths).pending_migrations
-      migrations.size > 0
+      !migrations.empty?
     end
   end
 end

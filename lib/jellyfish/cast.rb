@@ -30,8 +30,8 @@ module Jellyfish
 
       def from_string
         return unless @value.is_a? ::String
-        throw :cast, true if @value =~ (/\A(true|t|yes|y|on|1)\z/i)
-        throw :cast, false if @value.blank? || @value =~ (/\A(false|f|no|n|off|0)\z/i)
+        throw :cast, true if @value =~ /\A(true|t|yes|y|on|1)\z/i
+        throw :cast, false if @value.blank? || @value =~ /\A(false|f|no|n|off|0)\z/i
         throw :cast, nil
       end
 
@@ -72,7 +72,7 @@ module Jellyfish
           to_array
           to_date
           to_datetime
-          fail UnhandledCastException, 'unknown cast type'
+          raise UnhandledCastException, 'unknown cast type'
         end
       end
 
@@ -125,7 +125,7 @@ module Jellyfish
       end
 
       def cast_fail(msg)
-        fail FailedCastException, msg
+        raise FailedCastException, msg
       end
     end
   end

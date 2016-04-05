@@ -33,7 +33,7 @@ RSpec.describe Provider, type: :model do
     expect(provider).to have_attributes(type: a_string_starting_with('Provider::Type'))
   end
 
-  it 'sets the registered_provider_id field'do
+  it 'sets the registered_provider_id field' do
     expect(provider.registered_provider_id).to eq(registered_provider.id)
   end
 

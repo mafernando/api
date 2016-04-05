@@ -16,46 +16,46 @@ namespace :upkeep do
     puts
 
     t = Time.gm(2015, 2, 14, 0, 0, 0)
-    puts '  [111] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [111] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2015, 1, 14, 0, 0, 0)
-    puts '  [101] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [101] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 2, 14, 0, 0, 0)
-    puts '  [011] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [011] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 3, 14, 0, 0, 0)
-    puts '  [001] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [001] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2015, 2, 13, 0, 0, 0)
-    puts '  [110] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [110] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2015, 2, 15, 0, 0, 0)
-    puts '  [110] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [110] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2015, 1, 13, 0, 0, 0)
-    puts '  [100] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [100] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2015, 1, 15, 0, 0, 0)
-    puts '  [100] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [100] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 2, 13, 0, 0, 0)
-    puts '  [010] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [010] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 2, 15, 0, 0, 0)
-    puts '  [010] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [010] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 3, 13, 0, 0, 0)
-    puts '  [000] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [000] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 3, 15, 0, 0, 0)
-    puts '  [000] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [000] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 1, 13, 0, 0, 0)
-    puts '  [000] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [000] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
 
     t = Time.gm(2014, 1, 15, 0, 0, 0)
-    puts '  [000] months_run: ' + (CalTest.months_run(current_date, t)).to_s + ' ' + t.to_s
+    puts '  [000] months_run: ' + CalTest.months_run(current_date, t).to_s + ' ' + t.to_s
     puts ''
   end
 

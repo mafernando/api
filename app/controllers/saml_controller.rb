@@ -84,11 +84,11 @@ class SamlController < ApplicationController
   def process_logout_response
     settings = saml_settings
 
-    if session.key? :transation_id
-      logout_response = OneLogin::RubySaml::Logoutresponse.new(params[:SAMLResponse], settings, matches_request_id: session[:transation_id])
-    else
-      logout_response = OneLogin::RubySaml::Logoutresponse.new(params[:SAMLResponse], settings)
-    end
+    logout_response = if session.key? :transation_id
+                        OneLogin::RubySaml::Logoutresponse.new(params[:SAMLResponse], settings, matches_request_id: session[:transation_id])
+                      else
+                        OneLogin::RubySaml::Logoutresponse.new(params[:SAMLResponse], settings)
+                      end
 
     # Validate the SAML Logout Response
     # Actually log out this session

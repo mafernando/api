@@ -9,7 +9,7 @@
 #
 
 class Role < ActiveRecord::Base
-  PERMISSIONS = %w(projects approvals memberships)
+  PERMISSIONS = %w(projects approvals memberships).freeze
 
   has_many :memberships
   has_many :projects, through: :memberships
