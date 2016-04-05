@@ -9,7 +9,7 @@ module Jellyfish
         @version = givenversion
       else
         root = File.expand_path File.join('..', '..', '..'), __FILE__
-        @version = File.read(File.join root, 'VERSION').chomp # or fail if not found
+        @version = File.read(File.join(root, 'VERSION')).chomp # or fail if not found
       end
       @major, @minor, @patch = @version.scan(/\d+/)
       @short = "#{@major}.#{@minor}"

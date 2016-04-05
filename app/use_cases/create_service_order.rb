@@ -135,7 +135,7 @@ class CreateServiceOrder
   def services
     @services ||= params[:products].map do |product|
       klass = service_class product[:product_id]
-      @service = klass.new(product.delete :service)
+      @service = klass.new(product.delete(:service))
       @service = build_service(@service, product[:product_id])
     end
   end

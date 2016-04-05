@@ -7,7 +7,7 @@ settings_file = ["settings.#{Rails.env}.yml", 'settings.yml'].find do |file|
   File.exist? File.join(root, 'config', file)
 end
 
-SETTINGS = settings_file ? YAML.load_file(File.join root, 'config', settings_file) : {}
+SETTINGS = settings_file ? YAML.load_file(File.join(root, 'config', settings_file)) : {}
 
 SETTINGS[:version] = Jellyfish::Version.new
 

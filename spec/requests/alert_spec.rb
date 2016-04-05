@@ -102,7 +102,7 @@ RSpec.describe 'Alerts API' do
       )
       get "/api/v1/staff/#{staff.id}", includes: [:alerts]
       [alert, alert2, alert3].each do |al|
-        expect(json['alerts'].find { |v| v['id'] == al.id }.to_json).to eq(AlertSerializer.new(Alert.find al['id']).to_json)
+        expect(json['alerts'].find { |v| v['id'] == al.id }.to_json).to eq(AlertSerializer.new(Alert.find(al['id'])).to_json)
       end
     end
 
@@ -132,7 +132,7 @@ RSpec.describe 'Alerts API' do
       )
       get "/api/v1/projects/#{project.id}", includes: [:alerts]
       [alert, alert2, alert3].each do |al|
-        expect(json['alerts'].find { |v| v['id'] == al.id }.to_json).to eq(AlertSerializer.new(Alert.find al['id']).to_json)
+        expect(json['alerts'].find { |v| v['id'] == al.id }.to_json).to eq(AlertSerializer.new(Alert.find(al['id'])).to_json)
       end
     end
   end
