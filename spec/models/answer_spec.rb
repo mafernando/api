@@ -24,7 +24,7 @@ describe Answer do
   end
 
   it 'inherits from ValueTypes' do
-    expect(Answer.ancestors.include? ValueTypes).to be true
+    expect(Answer.ancestors.include?(ValueTypes)).to be true
   end
 
   describe 'casting' do

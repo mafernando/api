@@ -6,6 +6,7 @@ AllCops:
     - bin/**
     - lib/tasks/sample.rake
     - lib/jellyfish_fog_aws/spec/dummy/**/*
+  TargetRubyVersion: 2.2
 
 Rails:
   Enabled: true

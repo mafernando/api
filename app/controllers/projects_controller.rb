@@ -1,8 +1,8 @@
 class ProjectsController < ApplicationController
   include Wisper::Publisher
 
-  PROJECT_INCLUDES = %w(tags answers memberships groups staff alerts latest_alerts approvals approvers orders services)
-  PROJECT_METHODS = %w(problem_count state state_ok)
+  PROJECT_INCLUDES = %w(tags answers memberships groups staff alerts latest_alerts approvals approvers orders services).freeze
+  PROJECT_METHODS = %w(problem_count state state_ok).freeze
 
   before_action :pre_hook
   after_action :verify_authorized

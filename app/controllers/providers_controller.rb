@@ -1,5 +1,5 @@
 class ProvidersController < ApplicationController
-  PROVIDER_INCLUDES = %w(tags answers registered_provider)
+  PROVIDER_INCLUDES = %w(tags answers registered_provider).freeze
 
   after_action :verify_authorized
 

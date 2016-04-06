@@ -16,7 +16,7 @@ module ValueTypes
     url: 11,
     email: 12,
     cidr: 13
-  }
+  }.freeze
 
   included do
     validates :value, uri: true, if: -> (s) { s.value_type == 'url' }

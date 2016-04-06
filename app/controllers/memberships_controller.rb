@@ -1,5 +1,5 @@
 class MembershipsController < ApplicationController
-  MEMBERSHIP_INCLUDES = %w(group project role)
+  MEMBERSHIP_INCLUDES = %w(group project role).freeze
 
   after_action :verify_authorized
 

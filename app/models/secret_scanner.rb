@@ -2,8 +2,8 @@ class SecretScanner
   CERTIFICATE = /BEGIN (CERTIFICATE|RSA PRIVATE KEY)/
   ACCESS_KEY_ID_REGEX = /[A-Z0-9]{19}[A-Z0-9]/
   SECRET_ACCESS_KEY_REGEX = /[A-Za-z0-9\+]{39}[A-Za-z0-9\+]/
-  WHITELIST_PATTERNS = []
-  WHITELIST_FILES = []
+  WHITELIST_PATTERNS = [].freeze
+  WHITELIST_FILES = [].freeze
 
   def self.scan_dirs(directories, _regexes = [CERTIFICATE, ACCESS_KEY_ID_REGEX], _whitelists = WHITELIST_FILES)
     matches = []

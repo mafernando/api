@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  GROUP_INCLUDES = %w(memberships projects groups_staff staff)
+  GROUP_INCLUDES = %w(memberships projects groups_staff staff).freeze
 
   api :GET, '/groups', 'Returns a collection of groups'
   param :includes, Array, in: GROUP_INCLUDES
