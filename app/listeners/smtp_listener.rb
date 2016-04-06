@@ -8,6 +8,6 @@ class SMTPListener
   end
 
   def smtp_enabled
-    (Setting[:smtp_enabled].nil?) ? false : Setting[:smtp_enabled]
+    Setting[:smtp_enabled].nil? ? false : Setting[:smtp_enabled]
   end
 end

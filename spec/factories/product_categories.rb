@@ -13,7 +13,7 @@
 #
 
 FactoryGirl.define do
-  TAGS = %w(foo bar foobar fizz buzz fizzbuzz doo dad doodad wid get widget)
+  TAGS = %w(foo bar foobar fizz buzz fizzbuzz doo dad doodad wid get widget).freeze
 
   factory :product_category do
     sequence :name do |n|

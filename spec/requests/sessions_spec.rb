@@ -22,7 +22,7 @@ RSpec.describe 'Sessions API' do
 
     it 'adds a new api_token' do
       post '/api/v1/staff/sign_in.json', staff: { email: email, password: password }
-      expect(json.key? 'api_token').to be true
+      expect(json.key?('api_token')).to be true
       expect(json['api_token'].length).to eq(32)
       api_token = ApiToken.find_by token: json['api_token']
       expect(api_token.staff_id).to eq @staff.id
@@ -49,12 +49,12 @@ RSpec.describe 'Sessions API' do
 
     it 'removes the api_token' do
       post '/api/v1/staff/sign_in.json', staff: { email: email, password: password }
-      expect(json.key? 'api_token').to be true
+      expect(json.key?('api_token')).to be true
       expect(json['api_token'].length).to eq(32)
       api_token = ApiToken.find_by token: json['api_token']
       expect(api_token.staff_id).to eq @staff.id
       delete '/api/v1/staff/sign_out.json', {}, 'Authorization' => "Jellyfish #{api_token.token}"
-      expect(ApiToken.find_by token: json['api_token']).to be_nil
+      expect(ApiToken.find_by(token: json['api_token'])).to be_nil
     end
   end
 end

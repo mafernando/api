@@ -85,7 +85,7 @@ class StaffController < ApplicationController
     @staffs ||= begin
       authorize(Staff)
       if params[:query]
-        apply_scopes(Staff.search params[:query])
+        apply_scopes(Staff.search(params[:query]))
       else
         query_with apply_scopes(Staff.all), :includes, :pagination
       end

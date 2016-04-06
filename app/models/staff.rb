@@ -67,11 +67,11 @@ class Staff < ActiveRecord::Base
   def self.find_by_auth(auth_hash)
     auth_match = Authentications.find_by(provider: auth_hash['provider'], uid: auth_hash['uid'].to_s)
 
-    if auth_match
-      staff = Staff.find(auth_match.staff_id)
-    else
-      staff = Staff.find_by!(email: auth_hash['info']['email'])
-    end
+    staff = if auth_match
+              Staff.find(auth_match.staff_id)
+            else
+              Staff.find_by!(email: auth_hash['info']['email'])
+            end
 
     if staff
       Authentications.create staff_id: staff.id, provider: auth_hash['provider'], uid: auth_hash['uid'].to_s

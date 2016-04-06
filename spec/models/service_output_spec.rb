@@ -23,7 +23,7 @@ describe ServiceOutput do
   end
 
   it 'inherits from ValueTypes' do
-    expect(ServiceOutput.ancestors.include? ValueTypes).to be true
+    expect(ServiceOutput.ancestors.include?(ValueTypes)).to be true
   end
 
   it 'can be added to services' do

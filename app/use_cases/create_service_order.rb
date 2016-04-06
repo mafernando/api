@@ -42,20 +42,20 @@ class CreateServiceOrder
 
   def validate
     unless project.approved?
-      fail UnapprovedProject, "Project '#{project.name}' has not been approved."
+      raise UnapprovedProject, "Project '#{project.name}' has not been approved."
     end
 
     validate_name
 
     unless total_cost + project.monthly_spend <= project.monthly_budget
-      fail BudgetError, 'Adding this service will exceed the Project\'s monthly budget.'
+      raise BudgetError, 'Adding this service will exceed the Project\'s monthly budget.'
     end
   end
 
   def validate_name
     params[:products].each do |product|
       unless product[:service]['name'].present?
-        fail UnnamedService, 'A name for the service was not given.'
+        raise UnnamedService, 'A name for the service was not given.'
       end
     end
   end
@@ -101,11 +101,11 @@ class CreateServiceOrder
     # Saving the service will also save the order
     services.map do |service|
       unless service.save
-        fail PersistError, 'The service could not be created.'
+        raise PersistError, 'The service could not be created.'
       end
     end
     unless order.save
-      fail PersistError, 'The order could not be created.'
+      raise PersistError, 'The order could not be created.'
     end
   end
 
@@ -135,7 +135,7 @@ class CreateServiceOrder
   def services
     @services ||= params[:products].map do |product|
       klass = service_class product[:product_id]
-      @service = klass.new(product.delete :service)
+      @service = klass.new(product.delete(:service))
       @service = build_service(@service, product[:product_id])
     end
   end

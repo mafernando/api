@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   include Wisper::Publisher
 
-  ORDER_INCLUDES = %w(staff products project services answers)
+  ORDER_INCLUDES = %w(staff products project services answers).freeze
 
   after_action :verify_authorized, except: [:create]
 

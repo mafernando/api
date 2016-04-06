@@ -50,16 +50,16 @@ FactoryGirl.define do
       status 'warning'
       message 'This alert is within its start and end dates.'
       category 'foobar'
-      start_date "#{Time.zone.now}" # START DATE NOW
-      end_date "#{Time.zone.now + 1.day}" # END DATE NOT SET
+      start_date Time.zone.now.to_s # START DATE NOW
+      end_date((Time.zone.now + 1.day).to_s) # END DATE NOT SET
     end
 
     trait :inactive do
       status 'warning'
       message 'This alert is not within its start and end dates.'
       category 'foobar'
-      start_date "#{Time.zone.now - 2.days}" # YESTERDAY - 1
-      end_date "#{Time.zone.now - 1.day}" # YESTERDAY
+      start_date((Time.zone.now - 2.days).to_s) # YESTERDAY - 1
+      end_date((Time.zone.now - 1.day).to_s) # YESTERDAY
     end
   end
 end

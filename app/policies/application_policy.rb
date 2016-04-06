@@ -2,7 +2,7 @@ class ApplicationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
-    fail Pundit::NotAuthorizedError, 'must be logged in' unless user
+    raise Pundit::NotAuthorizedError, 'must be logged in' unless user
     @user = user
     @record = record
   end
@@ -56,12 +56,12 @@ class ApplicationPolicy
 
   def project_role_permits?(project_id, action)
     user.roles
-      .joins(:projects)
-      .where('projects.id' => project_id)
-      .where('permissions->:model_type ? :permission',
-        model_type: table_name(record),
-        permission: action)
-      .exists?
+        .joins(:projects)
+        .where('projects.id' => project_id)
+        .where('permissions->:model_type ? :permission',
+          model_type: table_name(record),
+          permission: action)
+        .exists?
   end
 
   def logged_in?
@@ -82,7 +82,7 @@ class ApplicationPolicy
     elsif object.class.respond_to? :table_name
       object.class.table_name
     else
-      fail ArgumentError, "#{object.inspect} or its singleton class do not define `table_name`."
+      raise ArgumentError, "#{object.inspect} or its singleton class do not define `table_name`."
     end
   end
 end

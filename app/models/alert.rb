@@ -32,7 +32,7 @@ class Alert < ActiveRecord::Base
   scope :alertable_type, ->(alertable_type) { where('alertable_type = ?', alertable_type) }
   scope :newest_first, -> { order('updated_at DESC') }
   scope :oldest_first, -> { order(:updated_at) }
-  scope :max_by_status, -> { order(%w(unknown ok pending warning critical).map { |s| "alerts.status = '#{s}'" }.join ', ').limit 1 }
+  scope :max_by_status, -> { order((%w(unknown ok pending warning critical).map { |s| "alerts.status = '#{s}'" }.join ', ')).limit 1 }
 
   after_commit :cache_alert_data, on: [:create, :update]
 
