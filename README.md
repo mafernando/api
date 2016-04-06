@@ -47,4 +47,4 @@ Reccomended:
 This project is licensed under the [Apache 2.0 License](http://projectjellyfish.readthedocs.org/#license).
 
 -----
-Copyright 2015 Booz Allen Hamilton
+Copyright 2016 Booz Allen Hamilton
