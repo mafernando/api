@@ -33,7 +33,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: "Y64rLj1ynOh4oEZZbsACPQJRcgQI3cNCyeNGfg6cxXrcSY9uBV60YcsqKOjC19q1kQAxOmI1iAZGDmj/1an/QN2Jp1owN3X+H50uJu2SLH72l37jiZ15ICDS86B4E4Ta7Um8S4lfzFamn2R3TQbyjowcjV7vnMb0EET7NQLY3bY="
+    secure: "xZzZnFc8T2vftLu5Xt52Avh6i5SmOlMIGcvpqfMyPjkz4PPoYlkmyGFxydC5wKyEa+q1AioHZN1Q0VjLc16ZOUYlZpJSOCuORNSiZ/hxU2QyO3UgfG0DFG++v6HoZdKgStvxJTRCCHrA+JqAfFt3v3thohzzey3zoIvuRRE1E9M="
   app: jellyfish-dev
   run: rake db:schema:load; rake spec; rake db:seed; rake sample:demo
   skip_cleanup: true
