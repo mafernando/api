@@ -38,7 +38,7 @@ gem 'time_for_a_boolean'
 gem 'wisper'
 
 # Tests
-group :development, :test do
+group :development, :test, :docker do
   gem 'annotate'
   gem 'awesome_print'
   gem 'brakeman', require: false
