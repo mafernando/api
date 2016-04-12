@@ -110,5 +110,5 @@ gem 'has_scope'
 
 # Jellyfish Extensions
 gem 'jellyfish-notification'
-gem 'jellyfish-aws', git: 'git://github.com/mafernando/jellyfish-aws.git', branch: 'develop'
-gem 'jellyfish-odl', git: 'git://github.com/mafernando/jellyfish-odl.git', branch: 'develop'
+gem 'jellyfish-aws', git: 'git://github.com/mafernando/jellyfish-aws.git', branch: 'demo/odl'
+gem 'jellyfish-odl', git: 'git://github.com/mafernando/jellyfish-odl.git', branch: 'demo/odl'
