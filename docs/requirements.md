@@ -1,9 +1,11 @@
 System Requirements
 ===============
 
-This document outlines system requirements for deploying Project Jellyfish.  Minimum requirements will largely depend 
-on how servers the system will be accessing, how much monitoring data is incoming (if you have monitoring enabled), and 
-how many people are accessing the site via the mobile application and web application.
+This document outlines system requirements for deploying Project Jellyfish.  
+Minimum requirements will largely depend on how servers the system will be
+accessing, how much monitoring data is incoming (if you have monitoring
+enabled), and how many people are accessing the site via the mobile application
+and web application.
 
 ### Bare Metal / Traditional Virtual Machine
 
