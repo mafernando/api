@@ -1,13 +1,7 @@
 language: ruby
-cache:
-  directories:
-  - vendor/bundle
-  - node_modules
-  - bower_components
-rvm: 2.3.0
-node_js:
-  - "0.12"
 sudo: false
+rvm: 2.3.0
+cache:  bundler
 addons:
   postgresql: '9.4'
   code_climate:
@@ -19,14 +13,10 @@ before_install:
 - sh -e /etc/init.d/xvfb start
 before_script:
 - bundle exec rake db:create
-- npm install -g npm@2
-- npm install -g gulp bower
-- npm install
-- bower install
+- bundle exec rake db:setup
+- bundle exec rake sample:demo
 - bundle install
 script:
-- gulp build
-- gulp vet
 - bundle exec rubocop
 - bundle exec rspec
 

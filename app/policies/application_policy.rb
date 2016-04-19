@@ -56,12 +56,12 @@ class ApplicationPolicy
 
   def project_role_permits?(project_id, action)
     user.roles
-        .joins(:projects)
-        .where('projects.id' => project_id)
-        .where('permissions->:model_type ? :permission',
-          model_type: table_name(record),
-          permission: action)
-        .exists?
+      .joins(:projects)
+      .where('projects.id' => project_id)
+      .where('permissions->:model_type ? :permission',
+        model_type: table_name(record),
+        permission: action)
+      .exists?
   end
 
   def logged_in?

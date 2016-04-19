@@ -32,15 +32,6 @@ settings.yml
 /doc/dependencies*
 .env
 
-src/aside
-
-### Bower ###
-bower_components
-.bower-cache
-.bower-registry
-.bower-tmp
-
-
 ### Node ###
 # Logs
 logs
@@ -67,8 +58,6 @@ coverage
 build/Release
 
 # Dependency directory
-# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules
 
 # Reports
 /reports
@@ -131,5 +120,3 @@ crashlytics-build.properties
 # Temp build directory
 .tmp
 
-# Ignore all of public
-/public

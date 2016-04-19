@@ -41,7 +41,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_controller.action_on_unpermitted_parameters = true
-  config.assets.paths << 'src/client'
+  # config.assets.paths << 'src/client'
 end
 
 Rails.application.routes.default_url_options[:host] = 'localhost:3000'
