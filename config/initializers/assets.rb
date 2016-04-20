@@ -14,6 +14,8 @@ Rails.application.config.assets.precompile.unshift(proc do |path, filename|
   filename.start_with?(Rails.root.join('app/assets').to_s) && !%w(.js .css .html .svg).include?(File.extname(path))
 end)
 
+Rails.application.config.assets.precompile += %w( .svg .png .jpg .gif)
+
 # Skip compiling anything other than .js or .css files
 # Rails.application.config.assets.precompile.delete Sprockets::Railtie::LOOSE_APP_ASSETS
 
