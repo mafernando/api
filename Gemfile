@@ -41,7 +41,7 @@ gem 'wisper'
 gem 'angular-rails-templates'
 # Remove asset requests from the logs
 gem 'quiet_assets', group: :development
-gem "non-stupid-digest-assets"
+gem 'non-stupid-digest-assets'
 
 # CSS
 gem 'bootstrap-sass'
@@ -111,6 +111,8 @@ group :development, :test do
     gem 'rails-assets-sinon'
     gem 'rails-assets-bardjs', '~> 0.1.0'
   end
+
+  gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
 end
 
 group :test do
@@ -164,8 +166,3 @@ gem 'has_scope'
 
 # ActiveRecord JSON Validator
 gem 'activerecord_json_validator'
-
-# Jellyfish Extensions
-gem 'jellyfish-aws', git: 'git://github.com/projectjellyfish/jellyfish-aws.git'
-gem 'jellyfish-docker', git: 'git://github.com/projectjellyfish/jellyfish-docker.git'
-gem 'jellyfish-azure', git: 'git://github.com/neudesic/jellyfish-azure.git'

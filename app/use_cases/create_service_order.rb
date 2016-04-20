@@ -91,6 +91,7 @@ class CreateServiceOrder
       setup_price: @setup_price,
       hourly_price: @hourly_price,
       monthly_price: @monthly_price,
+      status: Order.statuses['completed'],
       services: services
     }
 
