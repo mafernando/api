@@ -120,3 +120,5 @@ crashlytics-build.properties
 # Temp build directory
 .tmp
 
+# Asset Builds
+/public/frontend
