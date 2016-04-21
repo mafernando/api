@@ -110,8 +110,6 @@ group :development, :test do
     gem 'rails-assets-sinon'
     gem 'rails-assets-bardjs', '~> 0.1.0'
   end
-
-  gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
 end
 
 group :test do
@@ -165,3 +163,7 @@ gem 'has_scope'
 
 # ActiveRecord JSON Validator
 gem 'activerecord_json_validator'
+
+group :test, :development, :staging do
+  gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
+end

@@ -38,6 +38,11 @@
     }
 
     function loadScripts() {
+      if (0 === scripts.length) {
+        deferred.resolve();
+        return;
+      }
+      
       angular.forEach(scripts, injectScript);
 
       function injectScript(script) {
