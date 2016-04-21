@@ -41,7 +41,7 @@ Jellyfish code, and type the following commands:
 ```
 rake db:setup
 rake db:seed
-rake sample:demo
+rake setup:demo
 ```
 
 Once this is done successfully, you can disconnect from the container.  At this

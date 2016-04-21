@@ -94,10 +94,10 @@ rake db:seed
 ```
 
 ##### Seed with sample data (OPTIONAL)
-You only need to run `rake sample:demo` if you are wanting sample data (useful for development).  
+You only need to run `rake setup:demo` if you are wanting sample data (useful for development).  
 
 ```shell
-rake sample:demo
+rake setup:demo
 ```
 
 ## Start Server
