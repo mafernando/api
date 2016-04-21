@@ -41,6 +41,7 @@ gem 'wisper'
 gem 'angular-rails-templates'
 # Remove asset requests from the logs
 gem 'quiet_assets', group: :development
+gem 'non-stupid-digest-assets'
 
 # CSS
 gem 'bootstrap-sass'
