@@ -15,6 +15,4 @@ if Rails.env.development?
   Dir[Rails.root.join 'app', 'models', 'null', '*.rb'].each do |null_model|
     require_dependency null_model
   end
-
-  require 'jellyfish/demo'
 end

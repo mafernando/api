@@ -3,7 +3,7 @@ ruby '2.3.0'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '~> 4.2.6'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18.2'
@@ -37,13 +37,57 @@ gem 'time_for_a_boolean'
 # Adds enhanced pub/sub hooks
 gem 'wisper'
 
+# HTML
+gem 'angular-rails-templates'
+# Remove asset requests from the logs
+gem 'quiet_assets', group: :development
+
+# CSS
+gem 'bootstrap-sass'
+gem 'sass-rails'
+gem 'autoprefixer-rails'
+gem 'nokogiri'
+gem 'font-awesome-rails'
+
+# JavaScript
+gem 'ngannotate-rails', '~> 1.2', '>= 1.2.1'
+gem 'coffee-rails'
+gem 'uglifier'
+
+# UX dependencies
+source 'https://rails-assets.org' do
+  gem 'rails-assets-lodash', '~> 3.10.0'
+  gem 'rails-assets-moment', '~> 2.10.0'
+  gem 'rails-assets-toastr', '~> 2.1.0'
+  gem 'rails-assets-jquery', '~> 2.1.0'
+  gem 'rails-assets-bootstrap-sass-official', '~> 3.3.0'
+  gem 'rails-assets-ngDraggable', '~> 0.1.8'
+  gem 'rails-assets-angular', '~> 1.4.0'
+  gem 'rails-assets-angular-animate', '~> 1.4.0'
+  gem 'rails-assets-angular-aria', '~> 1.4.0'
+  gem 'rails-assets-angular-bootstrap', '~> 0.13.0'
+  gem 'rails-assets-angular-messages', '~> 1.4.0'
+  gem 'rails-assets-angular-resource', '~> 1.4.0'
+  gem 'rails-assets-angular-sanitize', '~> 1.4.0'
+  gem 'rails-assets-angular-ui-router', '~> 0.2.0'
+  gem 'rails-assets-angular-filter', '~> 0.5.4'
+  gem 'rails-assets-angular-smart-table', '~> 2.1.0'
+  gem 'rails-assets-angular-ui-sortable', '~> 0.13.3'
+  gem 'rails-assets-api-check'
+  gem 'rails-assets-angular-formly', '~> 7.1.0'
+  gem 'rails-assets-angular-marked', '~> 1.0.1'
+  gem 'rails-assets-angularjs-color-picker'
+  gem 'rails-assets-highcharts', '~> 4.1.6'
+  gem 'rails-assets-highcharts-ng', '~> 0.0.8'
+end
+
 # Tests
 group :development, :test do
   gem 'annotate'
   gem 'awesome_print'
   gem 'brakeman', require: false
   gem 'codeclimate-test-reporter', require: nil
-  gem 'database_cleaner', '~> 1.4.1'
+  gem 'database_cleaner', '~> 1.5.1'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'license_finder'
   gem 'pry-rails'
@@ -54,10 +98,18 @@ group :development, :test do
   gem 'test_after_commit'
   # gem 'poltergeist', require: 'capybara/poltergeist'
   gem 'spring'
+  gem 'spring-commands-rspec'
   # gem 'web-console', '~> 2.0.0'
   # gem 'capybara-angular', '0.1.0'
   # gem 'launchy'
   gem 'foreman'
+
+  # Dev dependencies
+  source 'https://rails-assets.org' do
+    gem 'rails-assets-angular-mocks', '~> 1.4.0'
+    gem 'rails-assets-sinon'
+    gem 'rails-assets-bardjs', '~> 0.1.0'
+  end
 end
 
 group :test do
@@ -112,7 +164,6 @@ gem 'has_scope'
 # ActiveRecord JSON Validator
 gem 'activerecord_json_validator'
 
-# Jellyfish Extensions
-gem 'jellyfish-aws', git: 'git://github.com/projectjellyfish/jellyfish-aws.git'
-gem 'jellyfish-docker', git: 'git://github.com/projectjellyfish/jellyfish-docker.git'
-gem 'jellyfish-azure', git: 'git://github.com/neudesic/jellyfish-azure.git'
+group :test, :development, :staging do
+  gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
+end

@@ -1,70 +1,50 @@
 GIT
-  remote: git://github.com/neudesic/jellyfish-azure.git
-  revision: 183c14fdf4bba59c6f55464f002e12170eec6ce5
+  remote: git://github.com/projectjellyfish/jellyfish-demo.git
+  revision: ee54d58299d0ed71963ec788259e6bb9a3409c63
   specs:
-    jellyfish-azure (0.0.1)
-      azure (~> 0.7.1)
-      azure_mgmt_resources (~> 0.1.1)
-      azure_mgmt_storage (~> 0.1.1)
-      bcrypt (~> 3.1)
-      rails (~> 4.2)
-      waitutil (~> 0.2.1)
-
-GIT
-  remote: git://github.com/projectjellyfish/jellyfish-aws.git
-  revision: 7ee30ae7399593cef5e2420d9f8538cdb56f7f33
-  specs:
-    jellyfish-aws (0.0.8)
-      bcrypt (~> 3.1)
-      fog-aws (~> 0.7)
-      rails (~> 4.2)
-
-GIT
-  remote: git://github.com/projectjellyfish/jellyfish-docker.git
-  revision: 20056a268ec2a09a49ec86cca6631769e21f372c
-  specs:
-    jellyfish-docker (0.0.1)
-      bcrypt (~> 3.1)
-      rails (~> 4.2)
+    jellyfish-demo (0.0.1)
+      faker
+      rails
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
-    actionmailer (4.2.3)
-      actionpack (= 4.2.3)
-      actionview (= 4.2.3)
-      activejob (= 4.2.3)
+    actionmailer (4.2.6)
+      actionpack (= 4.2.6)
+      actionview (= 4.2.6)
+      activejob (= 4.2.6)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (4.2.3)
-      actionview (= 4.2.3)
-      activesupport (= 4.2.3)
+    actionpack (4.2.6)
+      actionview (= 4.2.6)
+      activesupport (= 4.2.6)
       rack (~> 1.6)
       rack-test (~> 0.6.2)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (4.2.3)
-      activesupport (= 4.2.3)
+    actionview (4.2.6)
+      activesupport (= 4.2.6)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
     active_model_serializers (0.8.3)
       activemodel (>= 3.0)
-    activejob (4.2.3)
-      activesupport (= 4.2.3)
+    activejob (4.2.6)
+      activesupport (= 4.2.6)
       globalid (>= 0.3.0)
-    activemodel (4.2.3)
-      activesupport (= 4.2.3)
+    activemodel (4.2.6)
+      activesupport (= 4.2.6)
       builder (~> 3.1)
-    activerecord (4.2.3)
-      activemodel (= 4.2.3)
-      activesupport (= 4.2.3)
+    activerecord (4.2.6)
+      activemodel (= 4.2.6)
+      activesupport (= 4.2.6)
       arel (~> 6.0)
     activerecord_json_validator (1.0.0)
       activerecord (>= 4.2.0, < 5)
       json-schema (~> 2.5)
-    activesupport (4.2.3)
+    activesupport (4.2.6)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
@@ -74,9 +54,13 @@ GEM
       activesupport (>= 4.1.0, < 5.0)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
-    acts_as_list (0.7.2)
+    acts_as_list (0.7.4)
       activerecord (>= 3.0)
     addressable (2.3.8)
+    angular-rails-templates (1.0.0)
+      railties (>= 4.2, < 6)
+      sprockets (~> 3.0)
+      tilt
     annotate (2.7.0)
       activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
@@ -84,36 +68,17 @@ GEM
       json
     arel (6.0.3)
     ast (2.2.0)
+    autoprefixer-rails (6.3.6)
+      execjs
     awesome_print (1.6.1)
     axiom-types (0.1.1)
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
-    azure (0.7.1)
-      addressable (~> 2.3)
-      faraday (~> 0.9)
-      faraday_middleware (~> 0.10)
-      json (~> 1.8)
-      mime-types (>= 1, < 3.0)
-      nokogiri (~> 1.6)
-      systemu (~> 2.6)
-      thor (~> 0.19)
-      uuid (~> 2.0)
-    azure_mgmt_resources (0.1.2)
-      concurrent-ruby (>= 1.0.0.pre1, < 2)
-      faraday (~> 0.9)
-      faraday-cookie_jar (~> 0.0.6)
-      json (~> 1.8)
-      ms_rest (~> 0.1.0)
-      ms_rest_azure (~> 0.1.0)
-    azure_mgmt_storage (0.1.2)
-      concurrent-ruby (>= 1.0.0.pre1, < 2)
-      faraday (~> 0.9)
-      faraday-cookie_jar (~> 0.0.6)
-      json (~> 1.8)
-      ms_rest (~> 0.1.0)
-      ms_rest_azure (~> 0.1.0)
     bcrypt (3.1.11)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     brakeman (3.2.1)
       erubis (~> 2.6)
       haml (>= 3.0, < 5.0)
@@ -132,9 +97,16 @@ GEM
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
+    coffee-rails (4.1.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.1.x)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     daemons (1.2.3)
-    database_cleaner (1.4.1)
+    database_cleaner (1.5.2)
     delayed_job (4.1.1)
       activesupport (>= 3.0, < 5.0)
     delayed_job_active_record (4.1.0)
@@ -142,12 +114,11 @@ GEM
       delayed_job (>= 3.0, < 5)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (3.5.6)
+    devise (4.0.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
+      railties (>= 4.1.0, < 5.1)
       responders
-      thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
@@ -159,38 +130,19 @@ GEM
       railties (>= 4.0, < 5.1)
     equalizer (0.0.11)
     erubis (2.7.0)
-    excon (0.49.0)
-    factory_girl (4.5.0)
+    execjs (2.6.0)
+    factory_girl (4.7.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.6.0)
-      factory_girl (~> 4.5.0)
+    factory_girl_rails (4.7.0)
+      factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    faraday (0.9.2)
-      multipart-post (>= 1.2, < 3)
-    faraday-cookie_jar (0.0.6)
-      faraday (>= 0.7.4)
-      http-cookie (~> 1.0.0)
-    faraday_middleware (0.10.0)
-      faraday (>= 0.7.4, < 0.10)
+    faker (1.6.3)
+      i18n (~> 0.5)
     ffi (1.9.10)
-    fog-aws (0.9.2)
-      fog-core (~> 1.27)
-      fog-json (~> 1.0)
-      fog-xml (~> 0.1)
-      ipaddress (~> 0.8)
-    fog-core (1.37.0)
-      builder
-      excon (~> 0.45)
-      formatador (~> 0.2)
-    fog-json (1.0.2)
-      fog-core (~> 1.0)
-      multi_json (~> 1.10)
-    fog-xml (0.1.2)
-      fog-core
-      nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-rails (4.6.1.0)
+      railties (>= 3.2, < 5.1)
     foreman (0.78.0)
       thor (~> 0.19.1)
-    formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.3.6)
@@ -209,7 +161,6 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
     ice_nine (0.11.2)
-    ipaddress (0.8.3)
     json (1.8.3)
     json-schema (2.6.1)
       addressable (~> 2.3.8)
@@ -221,29 +172,17 @@ GEM
       xml-simple
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    macaddr (1.7.1)
-      systemu (~> 2.6.2)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    ms_rest (0.1.2)
-      concurrent-ruby (~> 1.0)
-      faraday (~> 0.9.1)
-      json (~> 1.7)
-      timeliness (~> 0.3.7)
-    ms_rest_azure (0.1.2)
-      concurrent-ruby (~> 1.0)
-      faraday (~> 0.9.1)
-      faraday-cookie_jar (~> 0.0.6)
-      json (~> 1.7)
-      ms_rest (~> 0.1.0)
-    multi_json (1.11.2)
     multi_xml (0.5.5)
-    multipart-post (2.0.0)
     netrc (0.11.0)
+    ngannotate-rails (1.2.1)
+      execjs
+      rails (>= 3.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     omniauth (1.3.1)
@@ -270,23 +209,76 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
-    puma (3.2.0)
+    puma (3.4.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails (4.2.3)
-      actionmailer (= 4.2.3)
-      actionpack (= 4.2.3)
-      actionview (= 4.2.3)
-      activejob (= 4.2.3)
-      activemodel (= 4.2.3)
-      activerecord (= 4.2.3)
-      activesupport (= 4.2.3)
+    rails (4.2.6)
+      actionmailer (= 4.2.6)
+      actionpack (= 4.2.6)
+      actionview (= 4.2.6)
+      activejob (= 4.2.6)
+      activemodel (= 4.2.6)
+      activerecord (= 4.2.6)
+      activesupport (= 4.2.6)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 4.2.3)
+      railties (= 4.2.6)
       sprockets-rails
+    rails-assets-angular (1.4.10)
+    rails-assets-angular-animate (1.4.10)
+      rails-assets-angular (= 1.4.10)
+    rails-assets-angular-aria (1.4.10)
+      rails-assets-angular (= 1.4.10)
+    rails-assets-angular-bootstrap (0.13.4)
+      rails-assets-angular (>= 1.3.0)
+    rails-assets-angular-filter (0.5.8)
+      rails-assets-angular
+    rails-assets-angular-formly (7.1.2)
+      rails-assets-angular (>= 1.2.0, < 2)
+      rails-assets-api-check (>= 7.0.0, < 8)
+    rails-assets-angular-marked (1.0.1)
+      rails-assets-angular (>= 1.3.0)
+      rails-assets-marked (~> 0.3.1)
+    rails-assets-angular-messages (1.4.10)
+      rails-assets-angular (= 1.4.10)
+    rails-assets-angular-mocks (1.4.10)
+      rails-assets-angular (= 1.4.10)
+    rails-assets-angular-resource (1.4.10)
+      rails-assets-angular (= 1.4.10)
+    rails-assets-angular-sanitize (1.4.10)
+      rails-assets-angular (= 1.4.10)
+    rails-assets-angular-smart-table (2.1.8)
+      rails-assets-angular (>= 1.0.0, < 2)
+    rails-assets-angular-ui-router (0.2.18)
+      rails-assets-angular (>= 1.0.8, < 2)
+    rails-assets-angular-ui-sortable (0.13.4)
+      rails-assets-angular (>= 1.2)
+      rails-assets-jquery-ui (>= 1.9)
+    rails-assets-angularjs-color-picker (1.0.5)
+      rails-assets-angular (>= 1.3.0, < 2)
+      rails-assets-tinycolor (>= 1.3.0, < 2)
+    rails-assets-api-check (7.5.5)
+    rails-assets-bardjs (0.1.2)
+    rails-assets-bootstrap-sass-official (3.3.6)
+      rails-assets-jquery (>= 1.9.0)
+    rails-assets-highcharts (4.1.10)
+    rails-assets-highcharts-ng (0.0.11)
+    rails-assets-jquery (2.1.4)
+    rails-assets-jquery-ui (1.11.4)
+      rails-assets-jquery (>= 1.6)
+    rails-assets-lodash (3.10.1)
+    rails-assets-marked (0.3.5)
+    rails-assets-moment (2.10.6)
+    rails-assets-ngDraggable (0.1.8)
+      rails-assets-angular
+    rails-assets-sinon (1.17.3)
+    rails-assets-tinycolor (1.3.0)
+    rails-assets-toastr (2.1.2)
+      rails-assets-jquery (>= 1.6.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -300,9 +292,9 @@ GEM
       rails_stdout_logging
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
-    railties (4.2.3)
-      actionpack (= 4.2.3)
-      activesupport (= 4.2.3)
+    railties (4.2.6)
+      actionpack (= 4.2.6)
+      activesupport (= 4.2.6)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rainbow (2.1.0)
@@ -347,6 +339,12 @@ GEM
     rufus-scheduler (3.2.0)
     safe_yaml (1.0.4)
     sass (3.4.22)
+    sass-rails (5.0.4)
+      railties (>= 4.0.0, < 5.0)
+      sass (~> 3.1)
+      sprockets (>= 2.8, < 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+      tilt (>= 1.1, < 3)
     seed_dump (3.2.4)
       activerecord (>= 4)
       activesupport (>= 4)
@@ -366,15 +364,16 @@ GEM
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
-    spring (1.6.4)
-    sprockets (3.5.2)
+    spring (1.7.1)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
+    sprockets (3.6.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.0.4)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    systemu (2.6.5)
     temple (0.7.6)
     terminal-table (1.5.2)
     test_after_commit (1.0.0)
@@ -385,21 +384,19 @@ GEM
     time_for_a_boolean (0.1.0)
       activerecord
       railties
-    timeliness (0.3.8)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (3.0.0)
+      execjs (>= 0.3.0, < 3)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
     unicode-display_width (1.0.3)
-    uuid (2.3.8)
-      macaddr (~> 1.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    waitutil (0.2.1)
     warden (1.2.6)
       rack (>= 1.0)
     websocket (1.2.3)
@@ -416,25 +413,30 @@ DEPENDENCIES
   activesupport-json_encoder
   acts-as-taggable-on
   acts_as_list
+  angular-rails-templates
   annotate
   apipie-rails (= 0.3.3)
+  autoprefixer-rails
   awesome_print
   bcrypt (~> 3.1.7)
+  bootstrap-sass
   brakeman
   codeclimate-test-reporter
+  coffee-rails
   daemons
-  database_cleaner (~> 1.4.1)
+  database_cleaner (~> 1.5.1)
   delayed_job_active_record
   devise
   dotenv-rails
   factory_girl_rails (~> 4.0)
+  font-awesome-rails
   foreman
   friendly_id
   has_scope
-  jellyfish-aws!
-  jellyfish-azure!
-  jellyfish-docker!
+  jellyfish-demo!
   license_finder
+  ngannotate-rails (~> 1.2, >= 1.2.1)
+  nokogiri
   omniauth
   paper_trail
   paranoia
@@ -443,7 +445,34 @@ DEPENDENCIES
   pry-rails
   puma
   pundit
-  rails (= 4.2.3)
+  quiet_assets
+  rails (~> 4.2.6)
+  rails-assets-angular (~> 1.4.0)!
+  rails-assets-angular-animate (~> 1.4.0)!
+  rails-assets-angular-aria (~> 1.4.0)!
+  rails-assets-angular-bootstrap (~> 0.13.0)!
+  rails-assets-angular-filter (~> 0.5.4)!
+  rails-assets-angular-formly (~> 7.1.0)!
+  rails-assets-angular-marked (~> 1.0.1)!
+  rails-assets-angular-messages (~> 1.4.0)!
+  rails-assets-angular-mocks (~> 1.4.0)!
+  rails-assets-angular-resource (~> 1.4.0)!
+  rails-assets-angular-sanitize (~> 1.4.0)!
+  rails-assets-angular-smart-table (~> 2.1.0)!
+  rails-assets-angular-ui-router (~> 0.2.0)!
+  rails-assets-angular-ui-sortable (~> 0.13.3)!
+  rails-assets-angularjs-color-picker!
+  rails-assets-api-check!
+  rails-assets-bardjs (~> 0.1.0)!
+  rails-assets-bootstrap-sass-official (~> 3.3.0)!
+  rails-assets-highcharts (~> 4.1.6)!
+  rails-assets-highcharts-ng (~> 0.0.8)!
+  rails-assets-jquery (~> 2.1.0)!
+  rails-assets-lodash (~> 3.10.0)!
+  rails-assets-moment (~> 2.10.0)!
+  rails-assets-ngDraggable (~> 0.1.8)!
+  rails-assets-sinon!
+  rails-assets-toastr (~> 2.1.0)!
   rails_12factor
   rake
   responders
@@ -452,13 +481,16 @@ DEPENDENCIES
   rubocop
   rufus-scheduler
   sass
+  sass-rails
   seed_dump
   selenium-webdriver
   shoulda-matchers (= 2.8.0)
   spring
+  spring-commands-rspec
   test_after_commit
   time_for_a_boolean
   tzinfo-data
+  uglifier
   virtus
   will_paginate (~> 3.0.7)
   wisper

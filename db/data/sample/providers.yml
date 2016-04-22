@@ -1,8 +1,0 @@
----
-- _assoc: demo
-  type: Provider::Demo
-  registered_provider: 3c997248-e35e-408e-a577-3195dfa7f32e
-  name: Demo Provider
-  description: Provider for the Demo
-  active: true
-  tag_list: [demo]

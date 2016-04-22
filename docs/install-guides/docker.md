@@ -3,28 +3,59 @@
 Guide to running API with Docker
 
 ## Installing Docker
-Please see Docker's installation instructions available here: https://docs.docker.com/installation/
+Please see Docker's installation instructions available here:
+https://docs.docker.com/installation/
 
 ## Setup
 
-The Dockerfile and docker-compose.yml are the two files that properly configure Jellyfish-API to run on Docker.  It is 
-highly recommended that you change the secret keys in the docker-compose.yml file if you are running in production.  The
-keys in the file are not secure.
+The Dockerfile and docker-compose.yml are the two files that properly configure
+Project Jellyfish to run on Docker.  It is highly recommended that you change
+the secret keys in the docker-compose.yml file if you are running in production.  
+The keys in the file are not secure.
 
 Note: You should use the Docker container boozallen/projectjellyfish:latest
 
-To begin running the newly created Docker image, check out the code from git.  Change into that directory, and then type the following:
+To begin running Project Jellyfish in Docker, check out the code from git.
+
+```
+git clone https://github.com/boozallen/projectjellyfish.git
+```
+
+Change into that directory, and then type the following:
+
 ```
 docker-compose up
 ```
-Then, in a different terminal, enter the following command to setup the database:
+
+Once the containers are up and running, you will need to populate the database.
+To do this, you will need to exec into the running 'web' containers, via this
+command
+
 ```
-docker-compose run web rake db:setup
-docker-compose run web rake db:seed
-docker-compose run web rake sample:demo
+docker exec web
 ```
-Your application should now be running. To find your boot2docker ip address, run
+
+Once into the container, change into the directory that has the Project
+Jellyfish code, and type the following commands:
+
+```
+rake db:setup
+rake db:seed
+rake setup:demo
+```
+
+Once this is done successfully, you can disconnect from the container.  At this
+point you should be able to login to your Project Jellyfish instance.  Get your
+URL by typing:
+
 ```
 boot2docker ip
 ```
-The application will be running at that returned ip on port 3000
+
+The application will be running at that returned ip on port 3000.  The default
+username and password are:
+
+```
+Username: admin@projectjellyfish.org
+Password: jellyfish
+```

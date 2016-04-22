@@ -27,9 +27,9 @@ RUN npm install --production
 RUN bower install --allow-root --config.interactive=false
 RUN gulp build --production
 
-# Note: Don't forget you have to run the migrations manually, by SSH'ing 
+# Note: Don't forget you have to run the migrations manually, by SSH'ing
 # into the web server and running the following:
-# rake db:migrate && rake db:seed && rake sample:demo
+# rake db:migrate && rake db:seed && rake setup:demo
 
 EXPOSE 3000
 

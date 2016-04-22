@@ -1,13 +1,7 @@
 language: ruby
-cache:
-  directories:
-  - vendor/bundle
-  - node_modules
-  - bower_components
-rvm: 2.3.0
-node_js:
-  - "0.12"
 sudo: false
+rvm: 2.3.0
+cache:  bundler
 addons:
   postgresql: '9.4'
   code_climate:
@@ -19,24 +13,13 @@ before_install:
 - sh -e /etc/init.d/xvfb start
 before_script:
 - bundle exec rake db:create
-- npm install -g npm@2
-- npm install -g gulp bower
-- npm install
-- bower install
+- bundle exec rake db:setup
+- bundle exec rake setup:demo
 - bundle install
 script:
-- gulp build
-- gulp vet
 - bundle exec rubocop
 - bundle exec rspec
 
-deploy:
-  provider: heroku
-  api_key:
-    secure: "xZzZnFc8T2vftLu5Xt52Avh6i5SmOlMIGcvpqfMyPjkz4PPoYlkmyGFxydC5wKyEa+q1AioHZN1Q0VjLc16ZOUYlZpJSOCuORNSiZ/hxU2QyO3UgfG0DFG++v6HoZdKgStvxJTRCCHrA+JqAfFt3v3thohzzey3zoIvuRRE1E9M="
-  app: jellyfish-dev
-  run: rake db:schema:load; rake spec; rake db:seed; rake sample:demo
-  skip_cleanup: true
 env:
   global:
     secure: oglFznpoXgadlL7TyQ7/XYHLUCKxKle7HY5+XEgox76++kWcWt9TyiYfscChHbV5ERartdrJgC+hrCz5QNyDTICMxi1eJrcyCJO9CRqVpeATW2RA+Rvedmg4XUBGqXowNSWuQVT5zZktS89dTgtoHo5sZUw2eqnEbGJ1XtIPDGs=

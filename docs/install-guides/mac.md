@@ -32,7 +32,7 @@ env RCRC=$HOME/dotfiles/rcrc rcup
 The following command will create a new directory and place the latest code into it.
 
 ```shell
-git clone https://github.com/projectjellyfish/api.git
+git clone https://github.com/boozallen/projectjellyfish.git
 ```
 
 ## Environment Setup
@@ -42,7 +42,7 @@ _You're welcome to set the variables in your environment but it's recommended to
 
 ##### Create the .env file
 ```shell
-cd api
+cd projectjellyfish
 touch .env
 ```
 
@@ -59,27 +59,28 @@ _**From this point on it is assumed you are executing commands within the api di
 
 ##### Ensure tools have been installed
 ```shell
-npm install gulp-cli -g
-npm install bower -g
 gem install bundler
 ```
 
 ##### Install dependencies
 ```shell
-npm install
 bundle install
 ```
 
-##### Build the frontend
+##### Set Environment (OPTIONAL)
+Run the following rake commands to set the environment type (development, test, production) and compile assets for that environment. 
 ```shell
-gulp build
+# Where ENVIRONMENT can be development, test, production
+RAILS_ENV= ENVIRONMENT
+# rake assets:clobber can be used to clear out stale assets
+rake assets:precompile
 ```
 
 ## Create the Database
 Running this CLI command will create the database for you in PostgreSQL.
 
 ```
-createdb jellyfish_development
+rake db:create
 ```
 
 ##### Populate the Database
@@ -93,13 +94,13 @@ rake db:seed
 ```
 
 ##### Seed with sample data (OPTIONAL)
-You only need to run `rake sample:demo` if you are wanting sample data (useful for development).  
+You only need to run `rake setup:demo` if you are wanting sample data (useful for development).  
 
 ```shell
-rake sample:demo
+rake setup:demo
 ```
 
-## Start Server (Development mode)
+## Start Server
 
 ```shell
 rails s
@@ -120,4 +121,4 @@ rake upkeep:poll_miq_vms
 rake jobs:work
 ```
 
-Copyright 2015 Booz Allen Hamilton
+Copyright 2016 Booz Allen Hamilton

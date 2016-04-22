@@ -165,20 +165,9 @@ gem install bundler
 gem install pg -v '0.18.3' -- --with-pg-config=/usr/pgsql-9.4/bin/pg_config
 ```
 
-##### Install NPM
-
-You will need to install NodeJS / NPM you can do so by following the [NodeJS Install Docs](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager#enterprise-linux-and-fedora)
-
-##### Install "global" NPM Modules
-
-```shell
-sudo npm install gulp-cli -g
-sudo npm install bower -g
-```
-
 ##### Create Environment Variables
 
-Jellyfish is configured using enviroment variables.  You can either use "real"
+Jellyfish is configured using environment variables.  You can either use "real"
 enviromental variables, or use the included dotEnv gem.  It is _**highly**_ 
 recommended that you use "real" environment variables in a production 
 environment.
@@ -214,19 +203,6 @@ _**From this point on it is assumed you are executing commands within the api di
 bundle install
 ```
 
-##### Install all needed NPM modules
-```shell
-npm install
-```
-
-##### Build the frontend
-```shell
-bower install
-```
-```shell
-gulp build
-```
-
 ##### Populate the Database
 Run the following rake commands. Please note that this rake task does not create 
 the database or the database user (those will need to be created based on the DB 
@@ -238,10 +214,10 @@ rake db:seed
 ```
 
 ##### Seed with sample data (OPTIONAL)
-You only need to run `rake sample:demo` if you are wanting sample data (useful for development).  
+You only need to run `rake setup:demo` if you are wanting sample data (useful for development).  
 
 ```shell
-rake sample:demo
+rake setup:demo
 ```
 
 The default username and password when using the seed file is:

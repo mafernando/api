@@ -1,12 +1,12 @@
 AllCops:
   Exclude:
-    - config/unicorn.rb
     - db/**/*
+    - tmp/**/*
     - vendor/**/*
     - bin/**
     - lib/tasks/sample.rake
     - lib/jellyfish_fog_aws/spec/dummy/**/*
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.3
 
 Rails:
   Enabled: true
@@ -46,3 +46,10 @@ Style/ClosingParenthesisIndentation:
 
 Style/StringLiterals:
   EnforcedStyle: single_quotes
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+

@@ -16,15 +16,15 @@ class Permissions
     roles_for_project.where('permissions->:model_type ? :permission',
       model_type: @model_type,
       permission: action)
-                     .exists?
+      .exists?
   end
 
   private
 
   def roles_for_project
     @user.roles
-         .joins(:projects)
-         .where('projects.id' => @project_id)
+      .joins(:projects)
+      .where('projects.id' => @project_id)
   end
 
   def project(project_or_related)
