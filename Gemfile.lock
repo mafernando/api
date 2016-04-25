@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/projectjellyfish/jellyfish-demo.git
-  revision: ee54d58299d0ed71963ec788259e6bb9a3409c63
+  revision: f6b632efafdd897bec0037026683ae93858b6910
   specs:
     jellyfish-demo (0.0.1)
       faker

@@ -55,18 +55,8 @@ class ProductType < ActiveRecord::Base
     []
   end
 
-  def order_questions
-    ActiveSupport::Deprecation.warn 'ProductType.order_questions will be removed in a future update, use Product.order_questions instead', caller
-    []
-  end
-
   def product_class
     'Product'.constantize
-  end
-
-  def service_class
-    ActiveSupport::Deprecation.warn 'ProductType.service_class will be removed in a future update, use Product.service_class instead', caller
-    'Service'.constantize
   end
 
   def self.create_existing(product_type, opts)

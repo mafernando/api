@@ -41,11 +41,13 @@ class Product < ActiveRecord::Base
 
   scope :active, -> { where(active: true) }
 
-  # TODO: Move contents of ProductType.order_questions here after removal of deprecated method
-  delegate :order_questions, to: :product_type
+  def order_questions
+    []
+  end
 
-  # TODO: Move contents of ProductType.service_class here after removal of deprecated method
-  delegate :service_class, to: :product_type
+  def service_class
+    'Service'.constantize
+  end
 
   def self.policy_class
     ProductPolicy
