@@ -8,7 +8,10 @@ Rails.application.configure do
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
-  config.eager_load = ENV['RAILS_EAGER_LOAD'].present?
+  config.eager_load = true
+
+  # don't init the DB on precompile for Docker
+  config.assets.initialize_on_precompile = false
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
