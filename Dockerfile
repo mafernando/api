@@ -19,7 +19,7 @@ COPY Gemfile.lock /api/
 
 COPY . /api/
 
-RUN bundle install --without development test
+RUN bundle install
 RUN rake assets:compile
 
 # Note: Don't forget you have to run the migrations manually, by SSH'ing
