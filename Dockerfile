@@ -20,7 +20,7 @@ COPY Gemfile.lock /api/
 COPY . /api/
 
 RUN bundle install
-RUN rake assets:compile
+RUN bundle exec rake assets:precompile
 
 # Note: Don't forget you have to run the migrations manually, by SSH'ing
 # into the web server and running the following:
