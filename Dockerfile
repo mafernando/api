@@ -19,13 +19,7 @@ COPY Gemfile.lock /api/
 
 COPY . /api/
 
-RUN npm install -g gulp bower
-RUN npm install gulp bower
-
-RUN bundle install --without development test
-RUN npm install --production
-RUN bower install --allow-root --config.interactive=false
-RUN gulp build --production
+RUN rake assets:compile
 
 # Note: Don't forget you have to run the migrations manually, by SSH'ing
 # into the web server and running the following:
