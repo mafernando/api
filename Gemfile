@@ -117,6 +117,10 @@ group :test do
   gem 'shoulda-matchers', '2.8.0', require: false
 end
 
+group :docker do
+  gem 'activerecord-nulldb-adapter'
+end
+
 # Documentation
 gem 'apipie-rails', '0.3.3'
 

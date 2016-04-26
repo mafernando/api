@@ -8,8 +8,8 @@ WORKDIR /api
 
 ENV RACK_ENV=docker
 ENV RAILS_ENV=docker
-ENV DEVISE_SECRET_KEY=978e423d107dc2277f2987787a2f8ccd5ee0dcedf40f05f0188d732516a79559a7434feb56f35f31376f1b12325ac28ea540c8387fba83cb070e43af271ff9e9
-ENV SECRET_KEY_BASE=c7a71de57183e6e8aefede7737332c6283ce85a061a779fd761eac14c011255b6fd151d8cb3dd7403404b0f248f01bf4cfb97a17ec72b9ff3c5d1bd1ca3d72b2
+ENV DEVISE_SECRET_KEY=I_AM_INSECURE_CHANGE_ME
+ENV SECRET_KEY_BASE=I_AM_INSECURE_CHANGE_ME
 
 # If you are not using Docker compose, you need to set your database connection info here
 # ENV DATABASE_URL=postgres://user:pass@hostname:5432/database_name
@@ -19,13 +19,8 @@ COPY Gemfile.lock /api/
 
 COPY . /api/
 
-RUN npm install -g gulp bower
-RUN npm install gulp bower
-
 RUN bundle install --without development test
-RUN npm install --production
-RUN bower install --allow-root --config.interactive=false
-RUN gulp build --production
+RUN DB_ADAPTER=nulldb bundle exec rake assets:precompile
 
 # Note: Don't forget you have to run the migrations manually, by SSH'ing
 # into the web server and running the following:
