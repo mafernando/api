@@ -77,6 +77,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular-formly', '~> 7.1.0'
   gem 'rails-assets-angular-marked', '~> 1.0.1'
   gem 'rails-assets-angular-color-picker'
+  gem 'rails-assets-angularjs-color-picker'
   gem 'rails-assets-tinycolor'
   gem 'rails-assets-highcharts', '~> 4.1.6'
   gem 'rails-assets-highcharts-ng', '~> 0.0.8'
