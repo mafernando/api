@@ -11,7 +11,7 @@ environments.
 
 ### Documentation
 
-Please see the [Project Jellyfish Read the Docs](http://projectjellyfish.readthedocs.org) site.
+Please see the [Project Jellyfish Read the Docs](https://projectjellyfish.readthedocs.io) site.
 
 ### Issues
 
@@ -20,7 +20,7 @@ If you find an issue, please log at issue at https://github.com/boozallen/projec
 -----
 #### License
 
-This project is licensed under the [Apache 2.0 License](http://projectjellyfish.readthedocs.org/#license).
+This project is licensed under the [Apache 2.0 License](https://projectjellyfish.readthedocs.io/#license).
 
 -----
 Copyright 2016 Booz Allen Hamilton
