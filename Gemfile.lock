@@ -237,7 +237,6 @@ GEM
       rails-assets-angular (= 1.4.10)
     rails-assets-angular-bootstrap (0.13.4)
       rails-assets-angular (>= 1.3.0)
-    rails-assets-angular-color-picker (1.0.10)
     rails-assets-angular-filter (0.5.8)
       rails-assets-angular
     rails-assets-angular-formly (7.1.2)
@@ -455,7 +454,6 @@ DEPENDENCIES
   rails-assets-angular-animate (~> 1.4.0)!
   rails-assets-angular-aria (~> 1.4.0)!
   rails-assets-angular-bootstrap (~> 0.13.0)!
-  rails-assets-angular-color-picker!
   rails-assets-angular-filter (~> 0.5.4)!
   rails-assets-angular-formly (~> 7.1.0)!
   rails-assets-angular-marked (~> 1.0.1)!
@@ -477,7 +475,6 @@ DEPENDENCIES
   rails-assets-moment (~> 2.10.0)!
   rails-assets-ngDraggable (~> 0.1.8)!
   rails-assets-sinon!
-  rails-assets-tinycolor!
   rails-assets-toastr (~> 2.1.0)!
   rails_12factor
   rake

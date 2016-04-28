@@ -21,7 +21,7 @@
 //= require marked
 //= require angular-marked
 //= require tinycolor
-//= require angular-color-picker/angularjs-color-picker
+//= require angularjs-color-picker
 //= require highcharts
 //= require highcharts-ng
 
