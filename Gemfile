@@ -117,10 +117,6 @@ group :test do
   gem 'shoulda-matchers', '2.8.0', require: false
 end
 
-group :docker do
-  gem 'activerecord-nulldb-adapter'
-end
-
 # Documentation
 gem 'apipie-rails', '0.3.3'
 
@@ -169,5 +165,6 @@ gem 'has_scope'
 gem 'activerecord_json_validator'
 
 group :test, :development, :staging do
+  gem 'activerecord-nulldb-adapter'
   gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
 end
