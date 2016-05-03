@@ -16,4 +16,4 @@ RUN DB_ADAPTER=nulldb bundle exec rake assets:precompile
 
 EXPOSE 3000
 
-CMD bash -c "bundle exec rake db:reset && rake setup:demo && bundle exec rails s -p 3000 -b '0.0.0.0'"
+CMD bash -c "bundle exec rake db:migrate && bundle exec rake db:reset && rake setup:demo && bundle exec rails s -p 3000 -b '0.0.0.0'"
