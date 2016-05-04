@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mafernando/jellyfish-demo.git
-  revision: e366dfd200771b739c27660d42bbb17f957cd87e
+  revision: bba16eb8ba13532793eda3565082f23584a79365
   branch: demo/odl-be
   specs:
     jellyfish-demo (0.0.1)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/mafernando/jellyfish-odl.git
-  revision: f0b3bb5ba83c9cbbe44d5d977cbab9e519ff8ded
+  revision: 134e997d8685cd247a270938d5fcbcfbbaf85325
   branch: demo/odl-be
   specs:
     jellyfish-odl (0.0.1)
