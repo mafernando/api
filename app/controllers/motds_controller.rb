@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: motds
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime
+#  updated_at :datetime
+#  deleted_at :datetime
+#  staff_id   :integer
+#  message    :text
+#
+# Indexes
+#
+#  index_motds_on_staff_id  (staff_id)
+#
+
 class MotdsController < ApplicationController
   skip_before_action :require_user, only: [:show]
   after_action :verify_authorized, except: [:show]

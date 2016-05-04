@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: wizard_questions
+#
+#  id         :integer          not null, primary key
+#  text       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class WizardQuestionsController < ApplicationController
   api :GET, '/wizard_questions', 'List all wizard questions with answers'
   param :includes, Array, in: ['wizard_answers']

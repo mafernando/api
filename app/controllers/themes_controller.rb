@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: themes
+#
+#  id          :integer          not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  name        :string
+#  description :text
+#  config      :json
+#
+
 class ThemesController < ApplicationController
   skip_before_action :require_user, only: [:show]
   after_action :verify_authorized, except: [:show]
