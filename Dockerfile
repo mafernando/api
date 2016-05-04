@@ -1,4 +1,5 @@
 FROM ruby:2.3.0
+RUN git config --global url."https://github.com".insteadOf git://github.com
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
 ENV RACK_ENV=development
