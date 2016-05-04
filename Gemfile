@@ -166,5 +166,10 @@ gem 'activerecord_json_validator'
 
 group :test, :development, :staging do
   gem 'activerecord-nulldb-adapter'
-  gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
+  # gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
+  # gem 'jellyfish-odl', github: 'mafernando/jellyfish-odl', branch: 'demo/odl-be'
+  # gem 'jellyfish-odl', path: '../jellyfish-odl'
+  # gem 'jellyfish-demo', path: '../jellyfish-demo'
+  gem 'jellyfish-demo', github: 'mafernando/jellyfish-demo', branch: 'demo/odl-be'
+  gem 'jellyfish-odl', github: 'mafernando/jellyfish-odl', branch: 'demo/odl-be'
 end

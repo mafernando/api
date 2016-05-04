@@ -1,17 +1,19 @@
 FROM ruby:2.3.0
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
-RUN mkdir /api
-WORKDIR /api
-
 ENV RACK_ENV=development
 ENV RAILS_ENV=development
 ENV DEVISE_SECRET_KEY=I_AM_INSECURE_CHANGE_ME
 ENV SECRET_KEY_BASE=I_AM_INSECURE_CHANGE_ME
 
-COPY . /api/
-
+COPY Gemfile* /tmp/
+WORKDIR /tmp
 RUN bundle install
+
+RUN mkdir /api
+WORKDIR /api
+ADD . /api/
+
 RUN DB_ADAPTER=nulldb bundle exec rake assets:precompile
 
 EXPOSE 3000

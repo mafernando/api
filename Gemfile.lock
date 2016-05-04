@@ -1,10 +1,20 @@
 GIT
-  remote: git://github.com/projectjellyfish/jellyfish-demo.git
-  revision: f6b632efafdd897bec0037026683ae93858b6910
+  remote: git://github.com/mafernando/jellyfish-demo.git
+  revision: e366dfd200771b739c27660d42bbb17f957cd87e
+  branch: demo/odl-be
   specs:
     jellyfish-demo (0.0.1)
       faker
       rails
+
+GIT
+  remote: git://github.com/mafernando/jellyfish-odl.git
+  revision: f0b3bb5ba83c9cbbe44d5d977cbab9e519ff8ded
+  branch: demo/odl-be
+  specs:
+    jellyfish-odl (0.0.1)
+      bcrypt (~> 3.1)
+      rails (~> 4.2)
 
 GEM
   remote: https://rubygems.org/
@@ -437,6 +447,7 @@ DEPENDENCIES
   friendly_id
   has_scope
   jellyfish-demo!
+  jellyfish-odl!
   license_finder
   ngannotate-rails (~> 1.2, >= 1.2.1)
   nokogiri
