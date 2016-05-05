@@ -15,7 +15,8 @@ RUN mkdir /api
 WORKDIR /api
 ADD . /api/
 
-RUN DB_ADAPTER=nulldb bundle exec rake assets:precompile
+# Only needed if running Docker as production
+# RUN DB_ADAPTER=nulldb bundle exec rake assets:precompile
 
 EXPOSE 3000
 
