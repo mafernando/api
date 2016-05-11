@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/mafernando/jellyfish-demo.git
   revision: bba16eb8ba13532793eda3565082f23584a79365
-  branch: demo/odl-be
+  branch: demo/odl-bsc
   specs:
     jellyfish-demo (0.0.1)
       faker
@@ -9,8 +9,8 @@ GIT
 
 GIT
   remote: git://github.com/mafernando/jellyfish-odl.git
-  revision: bb54789b91842eeb8d873c20952336f70f85a5fc
-  branch: demo/odl-be
+  revision: 8ad27a762baf887f66bad76368cfbc77b3166469
+  branch: demo/odl-bsc
   specs:
     jellyfish-odl (0.0.1)
       bcrypt (~> 3.1)

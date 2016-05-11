@@ -170,6 +170,6 @@ group :test, :development, :staging do
   # gem 'jellyfish-odl', github: 'mafernando/jellyfish-odl', branch: 'demo/odl-be'
   # gem 'jellyfish-odl', path: '../jellyfish-odl'
   # gem 'jellyfish-demo', path: '../jellyfish-demo'
-  gem 'jellyfish-demo', github: 'mafernando/jellyfish-demo', branch: 'demo/odl-be'
-  gem 'jellyfish-odl', github: 'mafernando/jellyfish-odl', branch: 'demo/odl-be'
+  gem 'jellyfish-demo', github: 'mafernando/jellyfish-demo', branch: 'demo/odl-bsc'
+  gem 'jellyfish-odl', github: 'mafernando/jellyfish-odl', branch: 'demo/odl-bsc'
 end
