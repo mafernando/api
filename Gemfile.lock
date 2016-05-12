@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/mafernando/jellyfish-odl.git
-  revision: 8ad27a762baf887f66bad76368cfbc77b3166469
+  revision: 8232287f245572f6902bef1bbcda7a92dc5bbcfa
   branch: demo/odl-bsc
   specs:
     jellyfish-odl (0.0.1)
