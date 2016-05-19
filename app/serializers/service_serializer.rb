@@ -11,6 +11,8 @@
 #  health     :integer          default(0), not null
 #  status     :integer
 #  status_msg :string
+#  product_id :integer
+#  order_id   :integer
 #
 # Indexes
 #

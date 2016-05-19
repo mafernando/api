@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: wizard_questions
+#
+#  id         :integer          not null, primary key
+#  text       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 require 'rails_helper'
 
 describe 'WizardQuestions API' do

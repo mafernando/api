@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: logs
+#
+#  id            :integer          not null, primary key
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  log_level     :integer
+#  message       :text
+#  loggable_type :string
+#  loggable_id   :integer
+#
+
 class LogsController < ApplicationController
   def index
     respond_with_params logs

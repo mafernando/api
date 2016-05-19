@@ -1,3 +1,25 @@
+# == Schema Information
+#
+# Table name: services
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  type       :string           not null
+#  uuid       :string           not null
+#  name       :string           not null
+#  health     :integer          default(0), not null
+#  status     :integer
+#  status_msg :string
+#  product_id :integer
+#  order_id   :integer
+#
+# Indexes
+#
+#  index_services_on_type  (type)
+#  index_services_on_uuid  (uuid)
+#
+
 class ServicesController < ApplicationController
   SERVICE_INCLUDES = %w(alerts latest_alerts order project product provider product_type service_outputs logs).freeze
 

@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: bundles
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :text
+#  img         :string
+#  active_at   :datetime
+#  deleted_at  :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 require 'rails_helper'
 
 RSpec.describe 'Bundles', :show_in_doc do

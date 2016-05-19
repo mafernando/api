@@ -3,11 +3,15 @@
 # Table name: bundles
 #
 #  id          :integer          not null, primary key
-#  name        :string(255)
+#  name        :string
 #  description :text
-#  img         :string(255)
-#  active
-#  deleted
+#  img         :string
+#  active_at   :datetime
+#  deleted_at  :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class BundlesController < ApplicationController
   def self.document_bundle_params
     param :name, String, desc: 'Bundle name'

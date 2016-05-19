@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: product_categories
+#
+#  id              :integer          not null, primary key
+#  name            :string
+#  description     :string
+#  img             :string
+#  cached_tag_list :string
+#  deleted_at      :datetime
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 class ProductCategoriesController < ApplicationController
   api :GET, '/product_categories', 'Returns all product categories'
 
