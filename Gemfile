@@ -171,3 +171,6 @@ gem 'activerecord_json_validator'
 group :test, :development, :staging do
   gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
 end
+
+# Add LDAP
+gem 'net-ldap'

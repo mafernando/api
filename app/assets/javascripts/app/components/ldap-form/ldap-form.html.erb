@@ -9,15 +9,15 @@
   <div class="login-form__body">
     <div class="login-field">
       <div class="login-field__aside">
-        <label id="login-email-label" class="login-field__label">Email</label>
+        <label id="login-email-label" class="login-field__label">Username</label>
       </div>
-      <div class="login-field__body" ng-class="{'has-error': vm.hasErrors('email')}">
-        <input id="login-email" ng-model="vm.email" name="email" type="email"
+      <div class="login-field__body" ng-class="{'has-error': vm.hasErrors('username')}">
+        <input id="login-email" ng-model="vm.username" name="username" type="text"
                class="login-field__input" placeholder="" aria-labelledby="login-email-label" required/>
 
-        <div class="login-field__feedback" ng-messages="vm.form.email.$error">
-          <div ng-message="required">Your email is required.</div>
-          <div ng-message="email">Enter a valid email address.</div>
+        <div class="login-field__feedback" ng-messages="vm.form.username.$error">
+          <div ng-message="required">Your username is required.</div>
+          <div ng-message="username">Enter a valid username.</div>
         </div>
       </div>
     </div>

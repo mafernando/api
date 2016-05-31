@@ -8,6 +8,7 @@
   function AuthenticationServiceFactory($http, $q, SessionService) {
     var service = {
       login: login,
+      ldapLogin: ldapLogin,
       logout: logout,
       isAuthenticated: isAuthenticated,
       ssoInit: ssoInit
@@ -31,6 +32,23 @@
 
       function samlError() {
         deferred.resolve(false);
+      }
+    }
+
+    function ldapLogin(username, password) {
+      var credentials = {
+          staff: {
+              username: username,
+              password: password
+          }
+      };
+
+      return $http
+          .post('/api/v1/staff/sign_in', credentials)
+          .success(loginSuccess);
+
+      function loginSuccess(data) {
+          SessionService.create(data);
       }
     }
 
