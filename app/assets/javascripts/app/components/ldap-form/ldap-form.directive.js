@@ -30,7 +30,6 @@
       var dashboard = 'dashboard';
 
       vm.username = '';
-      vm.email = '';
       vm.password = '';
 
       vm.activate = activate;
