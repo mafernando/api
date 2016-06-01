@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/mafernando/jellyfish-demo.git
   revision: 6a5c9cb21ec9e93d8f33c3c854eab6d10c3f8442
-  branch: feature/update-demo-extension
+  branch: feature/1167-update-demo-extension
   specs:
     jellyfish-demo (0.0.1)
       faker
