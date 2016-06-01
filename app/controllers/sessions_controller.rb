@@ -33,10 +33,10 @@ class SessionsController < Devise::SessionsController
           resource.api_token = api_token.token
           render json: resource
         else
-          if Setting::LDAP[:ldap_enabled] && params.dig('staff','username') # get ldap info for bind user
+          if Setting::LDAP[:ldap_enabled] && params.dig('staff', 'username') # get ldap info for bind user
             # get ldap uid and password from params
-            ldap_uid = params.dig('staff','username')
-            ldap_password = params.dig('staff','password')
+            ldap_uid = params.dig('staff', 'username')
+            ldap_password = params.dig('staff', 'password')
 
             # get ldap server settings
             ldap_host = Setting::LDAP[:ldap_host]
@@ -45,34 +45,34 @@ class SessionsController < Devise::SessionsController
             ldap_bind_dn = "uid=#{ldap_uid},#{ldap_base_dn}"
 
             # make ldap connection
-            ldap = Net::LDAP.new :host => ldap_host,
-                                 :port => ldap_port,
-                                 :auth => {
-                                   :method => :simple,
-                                   :username => ldap_bind_dn,
-                                   :password => ldap_password
+            ldap = Net::LDAP.new host: ldap_host,
+                                 port: ldap_port,
+                                 auth: {
+                                   method: :simple,
+                                   username: ldap_bind_dn,
+                                   password: ldap_password
                                  }
 
             begin # indicate invalid login if ldap fails to bind or if no valid memberships exist
               if ldap.bind # query ldap for user info and memberships
                 # todo: decouple this so it doesn't require a bind user
-                filter = Net::LDAP::Filter.eq('uid',ldap_uid)
+                filter = Net::LDAP::Filter.eq('uid', ldap_uid)
 
-                # todo: these may not be consistent across AD instances
+                # TODO: these may not be consistent across AD instances
                 result_attrs = %w(uid givenname sn mail memberof)
-                ldap_response = ldap.search(:base =>ldap_base_dn,:filter=>filter,:attributes=>result_attrs)
+                ldap_response = ldap.search(base: ldap_base_dn, filter: filter, attributes: result_attrs)
 
                 # verify user is a member of JF groups: JF-User, JF-Manager, JF-Admin
                 groups = %w(JF-User JF-Manager JF-Administrator)
                 ldap_user = ldap_response[0]
                 memberships = ldap_user.nil? ? [] : ldap_user[:memberof]
-                user_in_group = groups.any? { |g| memberships.inject(false) { |found, x| found || x.include?(g) } }
+                user_in_group = groups.any? { |g| memberships.inject(false) { |a, e| a || e.include?(g) } }
 
                 if user_in_group # sync ldap user
                   # find highest user role : user < manager < admin
                   user_role = Staff.roles[:user]
-                  user_role = Staff.roles[:manager] if %w(JF-Manager).any? { |g| memberships.inject(false) { |found, x| found || x.include?(g) } }
-                  user_role = Staff.roles[:admin] if %w(JF-Administrator).any? { |g| memberships.inject(false) { |found, x| found || x.include?(g) } }
+                  user_role = Staff.roles[:manager] if %w(JF-Manager).any? { |g| memberships.inject(false) { |a, e| a || e.include?(g) } }
+                  user_role = Staff.roles[:admin] if %w(JF-Administrator).any? { |g| memberships.inject(false) { |a, e| a || e.include?(g) } }
 
                   # check if user in JF already exists with the ldap user email
                   resource = Staff.where(email: ldap_user[:mail]).first
