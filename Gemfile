@@ -169,5 +169,8 @@ gem 'has_scope'
 gem 'activerecord_json_validator'
 
 group :test, :development, :staging do
-  gem 'jellyfish-demo', github: 'projectjellyfish/jellyfish-demo'
+  gem 'jellyfish-demo', github: 'mafernando/jellyfish-demo', branch: 'demo/jellyfish-miq'
+  gem 'jellyfish-miq', github: 'mafernando/jellyfish-miq', branch: 'demo/jellyfish-miq'
+  # gem 'jellyfish-demo', path: '../jellyfish-demo'
+  # gem 'jellyfish-miq', path: '../jellyfish-miq'
 end

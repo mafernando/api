@@ -1,8 +1,18 @@
 GIT
-  remote: git://github.com/projectjellyfish/jellyfish-demo.git
-  revision: f6b632efafdd897bec0037026683ae93858b6910
+  remote: git://github.com/mafernando/jellyfish-demo.git
+  revision: 77f7768d832ef9eda4f8e721a4a723f2853969b2
+  branch: demo/jellyfish-miq
   specs:
     jellyfish-demo (0.0.1)
+      faker
+      rails
+
+GIT
+  remote: git://github.com/mafernando/jellyfish-miq.git
+  revision: cec57ba6eba04931a789e982b1d20a04cdd98489
+  branch: demo/jellyfish-miq
+  specs:
+    jellyfish-miq (0.0.1)
       faker
       rails
 
@@ -437,6 +447,7 @@ DEPENDENCIES
   friendly_id
   has_scope
   jellyfish-demo!
+  jellyfish-miq!
   license_finder
   ngannotate-rails (~> 1.2, >= 1.2.1)
   nokogiri
