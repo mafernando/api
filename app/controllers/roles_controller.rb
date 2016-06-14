@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: roles
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :text
+#  permissions :jsonb
+#
+
 class RolesController < ApplicationController
   def self.document_params(required: false)
     param :name, String, desc: 'Name of the role', required: required

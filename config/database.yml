@@ -1,8 +1,10 @@
 development: &default
   adapter: postgresql
   database: jellyfish_development
+  username: postgres
+  host: 192.168.99.100
+  port: 5432
   encoding: utf8
-  host: localhost
   min_messages: warning
   pool: 2
   timeout: 5000

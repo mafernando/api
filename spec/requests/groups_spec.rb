@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: groups
+#
+#  id          :integer          not null, primary key
+#  created_at  :datetime
+#  updated_at  :datetime
+#  name        :string
+#  description :text
+#  staff_count :integer          default(0)
+#
+
 require 'rails_helper'
 
 RSpec.describe 'Groups API' do

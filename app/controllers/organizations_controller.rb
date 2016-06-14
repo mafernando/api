@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: organizations
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :text
+#  img         :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  deleted_at  :datetime
+#
+# Indexes
+#
+#  index_organizations_on_deleted_at  (deleted_at)
+#
+
 class OrganizationsController < ApplicationController
   before_action :load_organization, only: [:show, :update, :destroy]
   before_action :load_org_params, only: [:create, :update]
