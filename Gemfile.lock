@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/mafernando/jellyfish-miq.git
-  revision: 0ddb92e58377ba33ad8fd51ddf6404152c6cba82
+  revision: 5e8b6743fc50541a4fd1ec2cf46b9baa51256577
   branch: demo/jellyfish-miq
   specs:
     jellyfish-miq (0.0.1)
