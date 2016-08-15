@@ -1,18 +1,12 @@
 development: &default
-  adapter: postgresql
-  database: jellyfish_development
-  username: postgres
-  host: 192.168.99.100
-  port: 5432
-  encoding: utf8
+  adapter: <%= ENV['DB_ADAPTER'] ||= 'postgresql' %>
   min_messages: warning
-  pool: 2
+  database: postgres
+  username: postgres
+  encoding: utf8
   timeout: 5000
-
-development:
-  <<: *default
-  adapter:  postgresql
-  database: jellyfish_development
+  pool: 2
+  host: db
 
 test:
   <<: *default
